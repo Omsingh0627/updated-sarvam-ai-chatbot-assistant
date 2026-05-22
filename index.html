@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8" />
+
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1.0"
+/>
+
+<title>Sarvam AI</title>
+
+<link
+rel="stylesheet"
+href="style.css"
+/>
+
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+</head>
+
+<body>
+
+<div class="app">
+
+<!-- SIDEBAR -->
+
+<div class="sidebar">
+
+<div class="sidebar-top">
+
+<div class="logo">
+🧠 Sarvam AI
+</div>
+
+<button id="new-chat-btn">
+✏️ New Chat
+</button>
+
+<input
+type="text"
+id="search-input"
+placeholder="Search chats..."
+/>
+
+<div class="sidebar-links">
+
+<div class="sidebar-link">
+📁 Projects
+</div>
+
+<div class="sidebar-link">
+⚡ AI Tools
+</div>
+
+<div class="sidebar-link">
+📌 Pinned
+</div>
+
+<div
+class="sidebar-link"
+id="settings-btn"
+>
+⚙️ Settings
+</div>
+
+</div>
+
+<div class="sidebar-section">
+Pinned
+</div>
+
+<div id="pinned-container"></div>
+
+<div class="sidebar-section">
+Recents
+</div>
+
+<div id="history"></div>
+
+</div>
+
+</div>
+
+<!-- MAIN -->
+
+<div class="main">
+
+<div class="topbar">
+
+<div class="top-title">
+Sarvam AI
+</div>
+
+<div class="online">
+● Online
+</div>
+
+</div>
+
+<!-- CHAT -->
+
+<div
+id="chat-container"
+class="chat-container"
+></div>
+
+<!-- WELCOME -->
+
+<div
+id="welcome-screen"
+class="welcome-screen"
+>
+
+<h1>
+Ready when you are.
+</h1>
+
+<div class="suggestions">
+
+<button
+class="suggestion-btn"
+data-prompt="Create an image of a futuristic city"
+>
+🎨 Create Image
+</button>
+
+<button
+class="suggestion-btn"
+data-prompt="Write a python program"
+>
+💻 Write Code
+</button>
+
+<button
+class="suggestion-btn"
+data-prompt="Translate hello to Japanese"
+>
+🌍 Translate
+</button>
+
+<button
+class="suggestion-btn"
+data-prompt="Help me brainstorm startup ideas"
+>
+🧠 Brainstorm
+</button>
+
+</div>
+
+</div>
+
+<!-- INPUT -->
+
+<div class="input-area">
+
+<!-- PLUS MENU -->
+
+<div class="plus-wrapper">
+
+<button id="plus-btn">
++
+</button>
+
+<div
+id="plus-menu"
+class="plus-menu"
+>
+
+<button id="upload-image-btn">
+🖼 Upload Image
+</button>
+
+<button id="upload-file-btn">
+📄 Upload File
+</button>
+
+<button id="generate-image-btn">
+🎨 Generate Image
+</button>
+
+<button id="paste-btn">
+📋 Paste Clipboard
+</button>
+
+</div>
+
+</div>
+
+<input
+type="file"
+id="image-input"
+accept="image/*"
+hidden
+/>
+
+<input
+type="file"
+id="file-input"
+hidden
+/>
+
+<input
+type="text"
+id="message-input"
+placeholder="Ask anything"
+/>
+
+<button id="voice-btn">
+🎤
+</button>
+
+<button id="send-btn">
+➤
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- SETTINGS -->
+
+<div
+id="settings-modal"
+class="modal"
+>
+
+<div class="modal-content">
+
+<div class="modal-header">
+
+<h2>
+Settings
+</h2>
+
+<button class="close-btn">
+✖
+</button>
+
+</div>
+
+<label>
+Language
+</label>
+
+<select id="language-select">
+
+<option value="English">
+English
+</option>
+
+<option value="Hindi">
+Hindi
+</option>
+
+<option value="Kannada">
+Kannada
+</option>
+
+<option value="Tamil">
+Tamil
+</option>
+
+<option value="Telugu">
+Telugu
+</option>
+
+<option value="Malayalam">
+Malayalam
+</option>
+
+<option value="Marathi">
+Marathi
+</option>
+
+<option value="Gujarati">
+Gujarati
+</option>
+
+<option value="Punjabi">
+Punjabi
+</option>
+
+<option value="Bengali">
+Bengali
+</option>
+
+<option value="Spanish">
+Spanish
+</option>
+
+<option value="French">
+French
+</option>
+
+<option value="German">
+German
+</option>
+
+<option value="Japanese">
+Japanese
+</option>
+
+<option value="Chinese">
+Chinese
+</option>
+
+</select>
+
+<label class="toggle-row">
+
+<span>
+Voice Input
+</span>
+
+<input
+type="checkbox"
+id="voice-toggle"
+checked
+/>
+
+</label>
+
+</div>
+
+</div>
+
+<!-- DELETE MODAL -->
+
+<div
+id="delete-modal"
+class="modal"
+>
+
+<div class="delete-box">
+
+<h2>
+Delete chat?
+</h2>
+
+<p id="delete-chat-text"></p>
+
+<div class="delete-actions">
+
+<button id="cancel-delete">
+Cancel
+</button>
+
+<button id="confirm-delete">
+Delete
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
